@@ -9,7 +9,6 @@ AutoModelForCausalLM.register(Qwen2Config, Qwen2ForCausalLM, exist_ok=True)
 
 MODEL_NAME = 'Qwen/Qwen2.5-7B-Instruct'
 MAX_NEW_TOKENS = 50
-TEMPERATURE = 0.7
 # This is the 'α' (alpha) value that we can tune
 INTERVENTION_STRENGTH = 1.0 
 
@@ -103,8 +102,7 @@ def generate_with_intervention(model, tokenizer, prompt, layer_idx, neuron_idx, 
         outputs = model.generate(
             **inputs,
             max_new_tokens=MAX_NEW_TOKENS,
-            temperature=TEMPERATURE,
-            do_sample=True,
+            do_sample=False,
             pad_token_id=tokenizer.pad_token_id,
         )
     
