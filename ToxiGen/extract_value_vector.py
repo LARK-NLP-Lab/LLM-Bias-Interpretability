@@ -183,11 +183,6 @@ def main():
         }
     }
     
-    required_groups = RACE_NEURONS.keys()
-    missing_groups = [g for g in required_groups if g not in prompts]
-    
-    if missing_groups:
-        print(f"\n Warning: Could not find harmful prompts for all groups: {missing_groups}")
     
     run_neuron_manipulation_experiment(model, tokenizer, prompts)
 
