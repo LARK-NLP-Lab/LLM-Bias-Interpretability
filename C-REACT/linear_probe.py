@@ -382,7 +382,6 @@ def main():
     print("   Multi-class Race Group Linear Probe Analysis")
     print("="*60)
     
-    login('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')
     model, tokenizer = model_setup(MODEL_NAME)
     
     dataset, label_to_group = load_creact_direct_probe_data(RACE_GROUPS)
