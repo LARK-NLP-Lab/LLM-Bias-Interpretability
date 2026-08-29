@@ -38,17 +38,6 @@ RACE_NEURONS = {
     'native_american': [
         (26, 6082),
         (24, 7087),   
-    ],
-    'middle_eastern': [
-        (27, 10528),
-        (27, 9988), 
-        (26, 9840),  
-        (26, 8005), 
-        (26, 6128),
-        (26, 52), 
-        (25, 13473),
-        (25, 3012), 
-        (24, 2602),  
     ]
 }
 
@@ -56,8 +45,7 @@ TOXIGEN_GROUPS = {
     'asian': ['asian', 'chinese'],
     'black': ['black'],  
     'latino': ['latino', 'mexican'],
-    'native_american': ['native_american'],
-    'middle_eastern': ['middle_east', 'jewish', 'muslim']
+    'native_american': ['native_american']
 }
 
 
