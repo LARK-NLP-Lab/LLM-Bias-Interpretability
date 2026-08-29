@@ -40,6 +40,7 @@ Install the main Python dependencies with:
 
 ```bash
 pip install -r requirements.txt
+```
 
 ## Data
 
