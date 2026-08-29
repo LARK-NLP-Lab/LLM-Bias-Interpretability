@@ -36,13 +36,10 @@ We use two datasets:
 
 ## Requirements
 
-Install the main Python dependencies:
+Install the main Python dependencies with:
 
 ```bash
-pip install torch transformers datasets scikit-learn pandas numpy tqdm huggingface_hub
-```
-
-You will also need access to the public model checkpoints listed above. Model weights are **not** redistributed in this repository.
+pip install -r requirements.txt
 
 ## Data
 
