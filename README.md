@@ -33,8 +33,6 @@ We use two datasets:
   Run indirect-cue classification, collect misclassified samples, and record neuron activations.
 - `C-REACT/neuron_intervention.py`
   Run intervention experiments on selected neuron groups.
-- `modeling_qwen2_mlp.py`
-  Custom Qwen model file kept for compatibility with earlier experiments.
 
 ## Requirements
 
