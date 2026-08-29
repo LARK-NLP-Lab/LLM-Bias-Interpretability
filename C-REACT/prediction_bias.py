@@ -1,4 +1,3 @@
-# Cue + 3x3 combined analysis
 import torch
 import numpy as np
 import pandas as pd
