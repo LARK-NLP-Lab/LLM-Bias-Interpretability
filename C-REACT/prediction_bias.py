@@ -7,9 +7,6 @@ from tqdm import tqdm
 import json
 import os
 import collections
-# from modeling_qwen2_mlp import Qwen2Config, Qwen2ForCausalLM 
-# AutoModelForCausalLM.register(Qwen2Config, Qwen2ForCausalLM, exist_ok=True)
-
 
 MODEL_NAME = 'Qwen/Qwen2.5-7B-Instruct'
 MODEL_CHOICES = {
@@ -19,7 +16,6 @@ MODEL_CHOICES = {
 }
 MAX_LENGTH = 512
 
-# Data File Paths
 INDICATORS_PATH = 'indicators_df.jsonl'
 ASSIGNMENTS_PATH = 'all_re_assignments_df.jsonl'
 OUTPUT_FILE_TEMPLATE = 'misclassified_samples_with_activations_{model}.jsonl'
@@ -36,7 +32,7 @@ C_REACT_RACE_GROUPS = {
     'Asian': 'RACE Asian',
 }
 
-# Global Tracker for Cues: {'White -> Asian': {'language': {'Russain': 5}, ...}}
+
 MISCLASSIFICATION_CUE_TRACKER = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(int)))
 
 ALL_RACE_NEURONS = {
@@ -82,7 +78,6 @@ def resolve_model_name(model_choice):
     return MODEL_CHOICES[model_choice]
 
 def model_setup(model_name):
-    """Loads model and tokenizer."""
     print(f"\nLoading model: {model_name}...")
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     if tokenizer.pad_token is None:
@@ -99,10 +94,6 @@ def model_setup(model_name):
     return model, tokenizer
 
 def load_creact_by_mention_type():
-    """
-    Loads ALL C-REACT sentences (no sampling), filters to keep only 'Indirect Only' 
-    samples for the target races. Returns text AND span data for cue tracking.
-    """
     print("\n--- Starting C-REACT Data Loading (All Indirect Samples) ---")
     
 
@@ -397,7 +388,6 @@ def analyze_and_print_activations(all_samples_data, all_race_neurons):
 
 
 def format_results_as_table(matrix, race_keys, race_labels_official):
-    """Prints the numpy confusion matrix."""
     print("\n\n" + "="*80)
     print("      MODEL CLASSIFICATION RESULTS (Indirect Context Bias)")
     print("="*80)
@@ -441,7 +431,6 @@ def format_results_as_table(matrix, race_keys, race_labels_official):
 
 
 def print_cue_analysis(cue_tracker):
-    """Prints the final statistics on misclassification cues."""
     print("\n\n" + "="*80)
     print("      MISCLASSIFICATION CUE ANALYSIS (What triggered the error?)")
     print("="*80)
