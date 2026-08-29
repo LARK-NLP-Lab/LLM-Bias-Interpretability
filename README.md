@@ -110,3 +110,7 @@ python C-REACT/neuron_intervention.py --model qwen
 - `ToxiGen/neuron_activations_hooked.py` is the recommended activation-analysis script for the final version of this repository.
 - Probe files are saved locally during training and are then reused for neuron selection.
 - Some scripts contain manually curated neuron lists used in the paper experiments.
+
+## License
+
+Released under the MIT License.
