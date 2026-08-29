@@ -30,7 +30,6 @@ RACE_GROUPS = {
     'black': ['black'],
     'latino': ['latino', 'mexican'],
     'native_american': ['native_american'],
-    'middle_eastern': ['middle_east', 'jewish', 'muslim']
 }
 
 
