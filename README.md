@@ -79,12 +79,17 @@ python ToxiGen/neuron_activations_hooked.py --model qwen
 
 ### C-REACT
 
-Train a probe:
+Train a probe (For C-REACT, direct-mention and indirect-mention settings are treated as separate inputs and should be run independently):
 
 ```bash
-python C-REACT/linear_probe.py --model qwen
-python C-REACT/linear_probe.py --model llama
-python C-REACT/linear_probe.py --model mistral
+python C-REACT/linear_probe.py --model qwen --mention-type direct
+python C-REACT/linear_probe.py --model qwen --mention-type indirect
+
+python C-REACT/linear_probe.py --model llama --mention-type direct
+python C-REACT/linear_probe.py --model llama --mention-type indirect
+
+python C-REACT/linear_probe.py --model mistral --mention-type direct
+python C-REACT/linear_probe.py --model mistral --mention-type indirect
 ```
 
 Inspect candidate neurons:
